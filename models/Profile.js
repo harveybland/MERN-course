@@ -43,7 +43,6 @@ const profileSchema = new mongoose.Schema({
             },
             from: {
                 type: Date,
-                required: true
             },
             to: {
                 type: String,
@@ -105,6 +104,10 @@ const profileSchema = new mongoose.Schema({
             }
         }
     ],
+    date: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 module.exports = Profile = mongoose.model('profile', profileSchema);
